@@ -15,10 +15,10 @@ In the end, the process of learning was fun and I hope to share some gems here s
 
 # Scaffolding 
 
-The first thing I needed to tackle was the lack of structure in my projects. I knew from the start I couldn't just have a giant jupyter notebook file. But from the infinite ways to scaffold a project, which one would be the most adequate? Was there a structure I could use generally? I found the answer with [cookiecutter intro]
+The first thing I needed to tackle was the lack of structure in my projects. I knew from the start I couldn't just have a giant jupyter notebook file. But from the infinite ways to scaffold a project, which one would be the most adequate? Was there a structure I could use generally? I found the answer with <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">
 
 
-Surely there are other ways to scaffold a project. And individual tasks may require specific solutions. But that's the default I always fall 
+Surely there are other ways to scaffold a project. And individual tasks may require specific solutions. But that's the default I always fall back on. 
 
 
 
@@ -72,14 +72,9 @@ Project Organization
     └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
 
 
---------
-
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
-
-
 # Environment 
 
-I used to have one environment with all the packages I could possibly need. That's inelegant, I know now, I knew then. For every project that gets past conception and early data exploration, I create a virtual environment with Conda. I only install the packages I will be using. There's an aesthetic quality to this, but it also allows for easy of reproducibility. Conda will sort out all dependencies and, the less clutter we have, lesser is the probability of conflict. Also, a tight controlled environment allows for better control over the package versions. Packages are updated all the time and, considering the intricate network of dependencies between them, it is not a rare thing for something to stop working whenever you update them. 
+A tight controlled environment allows for better maintainability and reproducibility of results. You and your colleagues should be able to easily reproduce the environment where some experiment was run or some model was trained. The intricate network of dependencies that exists between packages is very prone to breaking. A have a separate environment for each serious project. Conda allows for an easy management of dependencies. It is the makefile - [makefile](/blob/main/Makefile), though, that will allow for very easy#
 
 
 # Version Control
