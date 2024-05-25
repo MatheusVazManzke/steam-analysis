@@ -3,7 +3,7 @@ UNDER CONSTRUCTION
 steam-analysis
 ==============================
 
-My main goal here is documenting my workflow, so that I can have an easy source of reference. I do hope, though, that it may be useful to the occasional lost wanderer that may end up here. For in data science, we are all eternal learners. 
+<small><span style="color: gray;">My main goal here is documenting my workflow, so that I can have an easy source of reference. I do hope, though, that it may be useful to the occasional lost wanderer that may end up here. For in data science, we are all eternal learners.</span></small>
 
 "How can I actually use this 'model' of yours?" - asked a friend of mine. I had no idea. The mathematical core of Machine Learning is a thing of beauty and one can easily become enraptured by its promises. I thought I was some sort of meta-oracle, writting in arcane language and teaching machines how to tread the unknown. But 'If a tree falls in a forest and no one is around to hear it, does it make a sound?'; If my models exist only in the comforting cells of my notebooks, are they learning anything at all? Are they able to withstand reality? Or, like phosporus when exposed to the atmosphere, will they dissolve spectacularly? That question I was asked cast me out of the dreamy space of beautiful abstractions and heeded me to the answer. 
 
