@@ -15,7 +15,7 @@ In the end, the process of learning was fun and I hope to share some gems here s
 
 # Scaffolding 
 
-The first thing I needed to tackle was the lack of structure in my projects. I knew from the start I couldn't just have a giant jupyter notebook file. But from the infinite ways to scaffold a project, which one would be the most adequate? Was there a structure I could use generally? I found the answer with [cookiecutter](https://drivendata.github.io/cookiecutter-data-science/)
+The first thing I needed to tackle was the lack of structure in my projects. I knew from the start I couldn't just have a giant jupyter notebook file. But from the infinite ways to scaffold a project, which one would be the most adequate? Was there a structure I could use generally? I found the answer with [cookiecutter](https://drivendata.github.io/cookiecutter-data-science/). You can find details about the file structure bellow. 
 
 
 Surely there are other ways to scaffold a project. And individual tasks may require specific solutions. But that's the default I always fall back on. 
@@ -74,18 +74,17 @@ Project Organization
 
 # Environment 
 
-A tight controlled environment allows for better maintainability and reproducibility of results. You and your colleagues should be able to easily reproduce the environment where some experiment was run or some model was trained. The intricate network of dependencies that exists between packages is very prone to breaking. A have a separate environment for each serious project. Conda allows for an easy management of dependencies. It is the makefile - [makefile](/blob/main/Makefile), though, that will allow for very easy#
+A tight controlled environment allows for better maintainability and reproducibility of results. You and your colleagues should be able to easily reproduce the environment where some experiment was run or some model was trained in order to consistently find the same results. Also, the intricate network of dependencies that exists between packages is very prone to breaking. With environments, we can limit the number and version of packages to the strictly needed. A have a separate environment for each serious project. I use [Conda]{https://docs.conda.io/en/latest/} for easy management of dependencies. It is the makefile - [makefile](/blob/main/Makefile), though, that will allow us to recreate an environment anywhere with a sequence of simple commands. The file in this repository is automatically created by cookiecutter, but make has a very elegant and easy to undertand structure. It's well worth taking a look at it. 
 
 
 # Version Control
 
-Git
+
 
 # PyTest
 
 # Pre-commit hooks; testing, linting, formatting, typechecking.
 
-Now, that's very cool. 
 
 # Interlude 1 - Transformers and Pipelines
 
