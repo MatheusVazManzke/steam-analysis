@@ -3,7 +3,7 @@ UNDER CONSTRUCTION
 steam-analysis
 ==============================
 
-My main goal here is documenting my workflow, so that I can have an easy source of reference. I do hope, though, that it may be useful to the occasional lost wanderer that may end up here. For in data science, we are all eternal learners. 
+<small><span style="color: gray;">My main goal here is documenting my workflow, so that I can have an easy source of reference. I do hope, though, that it may be useful to the occasional lost wanderer that may end up here. For in data science, we are all eternal learners.</span></small>
 
 "How can I actually use this 'model' of yours?" - asked a friend of mine. I had no idea. The mathematical core of Machine Learning is a thing of beauty and one can easily become enraptured by its promises. I thought I was some sort of meta-oracle, writting in arcane language and teaching machines how to tread the unknown. But 'If a tree falls in a forest and no one is around to hear it, does it make a sound?'; If my models exist only in the comforting cells of my notebooks, are they learning anything at all? Are they able to withstand reality? Or, like phosporus when exposed to the atmosphere, will they dissolve spectacularly? That question I was asked cast me out of the dreamy space of beautiful abstractions and heeded me to the answer. 
 
@@ -15,7 +15,7 @@ In the end, the process of learning was fun and I hope to share some gems here s
 
 # Scaffolding 
 
-The first thing I needed to tackle was the lack of structure in my projects. I knew from the start I couldn't just have a giant jupyter notebook file. But from the infinite ways to scaffold a project, which one would be the most adequate? Was there a structure I could use generally? I found the answer with [cookiecutter](https://drivendata.github.io/cookiecutter-data-science/)
+The first thing I needed to tackle was the lack of structure in my projects. I knew from the start I couldn't just have a giant jupyter notebook file. But from the infinite ways to scaffold a project, which one would be the most adequate? Was there a structure I could use generally? I found the answer with [cookiecutter](https://drivendata.github.io/cookiecutter-data-science/). You can find details about the file structure bellow. 
 
 
 Surely there are other ways to scaffold a project. And individual tasks may require specific solutions. But that's the default I always fall back on. 
@@ -74,18 +74,17 @@ Project Organization
 
 # Environment 
 
-A tight controlled environment allows for better maintainability and reproducibility of results. You and your colleagues should be able to easily reproduce the environment where some experiment was run or some model was trained. The intricate network of dependencies that exists between packages is very prone to breaking. A have a separate environment for each serious project. Conda allows for an easy management of dependencies. It is the makefile - [makefile](/blob/main/Makefile), though, that will allow for very easy#
+A tight controlled environment allows for better maintainability and reproducibility of results. You and your colleagues should be able to easily reproduce the environment where some experiment was run or some model was trained in order to consistently find the same results. Also, the intricate network of dependencies that exists between packages is very prone to breaking. With environments, we can limit the number and version of packages to the strictly needed. A have a separate environment for each serious project. I use [Conda]{https://docs.conda.io/en/latest/} for easy management of dependencies. It is the makefile - [makefile](/blob/main/Makefile), though, that will allow us to recreate an environment anywhere with a sequence of simple commands. The file in this repository is automatically created by cookiecutter, but make has a very elegant and easy to undertand structure. It's well worth taking a look at it. 
 
 
 # Version Control
 
-Git
+
 
 # PyTest
 
 # Pre-commit hooks; testing, linting, formatting, typechecking.
 
-Now, that's very cool. 
 
 # Interlude 1 - Transformers and Pipelines
 
