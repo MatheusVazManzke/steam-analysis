@@ -74,19 +74,16 @@ Project Organization
 
 # Environment 
 
-A tight controlled environment allows for better maintainability and reproducibility of results. You and your colleagues should be able to easily reproduce the environment where some experiment was run or some model was trained in order to consistently find the same results. Also, the intricate network of dependencies that exists between packages is very prone to breaking. With environments, we can limit the number and version of packages to the strictly needed. A have a separate environment for each serious project. I use [Conda]{https://docs.conda.io/en/latest/} for easy management of dependencies. It is the makefile - [makefile](/blob/main/Makefile), though, that will allow us to recreate an environment anywhere with a sequence of simple commands. The file in this repository is automatically created by cookiecutter, but make has a very elegant and easy to undertand structure. It's well worth taking a look at it. 
-
-
-# Version Control
-
-
+A tight controlled environment allows for better maintainability and reproducibility of results. You and your colleagues should be able to easily reproduce the environment where some experiment was run or some model was trained in order to consistently find the same results. Also, the intricate network of dependencies that exists between packages is very prone to breaking. With environments, we can limit the number and version of packages to the strictly needed. A have a separate environment for each serious project. I use [Conda]{https://docs.conda.io/en/latest/} for easy management of dependencies.
+The makefile - [makefile](/blob/main/Makefile) in this repository allows us to recreate an environment anywhere with a sequence of simple commands. This file is automatically created by Cookiecutter and provides a clear and elegant structure. It’s well worth taking a look at it to understand how it works.
 
 # PyTest
 
 # Pre-commit hooks; testing, linting, formatting, typechecking.
+One of my favorite discoveries is [Pre-commit](https://pre-commit.com/). With Pre-commit, we can ensure that all our commits adhere to a standard set by ourselves in a .yaml file. You can check mine here: (main/.pre-commit-config.yaml). For example, I am unable to commit any file unless it complies with the PEP8 style guide for Python. If it doesn't, committing will fail, the files will be formatted, and I will have a chance to review them before trying to commit again. This applies to any instructions we define in our file. We can set up hooks to typecheck, lint, and even test our files.
 
+# Transformers and Pipelines
+In the future, I might want to run this analysis again, retrain the models with new data, or make new predictions. I use custom transformers and pipelines to ensure that I can do that with as little hassle as possible. In the (transformers] file, you can see all the different custom transformers I built for each step of data transformation. Although some hard coding was inevitable, I always try to make them as dynamic as possible, so that little refactoring will be needed if there are small changes to the data structure. With a few keystrokes, we can ensure that the whole transformation process will be replicated even if there are different column names or if we want to change the way we build our target variable.
 
-# Interlude 1 - Transformers and Pipelines
-
-# Interlude 2 - Hyperparameter tuning with Optuna
+# Hyperparameter tuning with Optuna
 
