@@ -87,3 +87,6 @@ In the future, I might want to run this analysis again, retrain the models with 
 
 # Hyperparameter tuning with Optuna
 
+This is less meta than all the other entries in this short article. Still, [Optuna]{https://optuna.org/} is worth sharing. It made my life easier and more joyous. It is my go to hyperparameter optmization tool. ----
+
+# API
