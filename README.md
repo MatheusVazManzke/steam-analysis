@@ -5,15 +5,16 @@ UNDER CONSTRUCTION
 1. [Introduction](#Introduction)
 2. [Scaffolding](#Scaffolding)
 3. [Environments](#Environments)
-4. [Pre-commit hooks](#Pre-commit hooks)
-5. [Transformers and Pipelines](#Transformers and Pipelines)
-6. [Hyperparameter tuning with Optuna](# Hyperparameter tuning with Optuna)
-7. [API](# API)
+4. [Pre-commit hooks](#pre-commit-hooks)
+5. [Transformers and Pipelines](#Transformers-and-Pipelines)
+6. [Hyperparameter tuning with Optuna](#Hyperparameter-tuning-with-Optuna)
+7. [API](#API)
 
-#Introduction
+<small style="color: grey;">Note: This project is still in early development stages.</small>
 
 ==============================
-#Introduction
+
+# Introduction
 
 My main goal here is documenting my workflow, so that I can have an easy source of reference. I do hope, though, that it may be useful to the occasional lost wanderer that may end up here. For in data science, we are all eternal learners.
 
