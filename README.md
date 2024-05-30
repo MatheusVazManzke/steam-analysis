@@ -10,7 +10,7 @@ UNDER CONSTRUCTION
 6. [Hyperparameter tuning with Optuna](#Hyperparameter-tuning-with-Optuna)
 7. [API](#API)
 
-<small style="color: grey;">Note: This project is still in early development stages.</small>
+</small> Note: If you want to see the workflow and the code, go straight to [Scaffolding](#Scaffolding). Overall, there are some unnecessary complexities for a project of this scale. I still hope that it serves as an example of my baseline workflow.</small>
 
 ==============================
 
