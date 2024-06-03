@@ -1,6 +1,21 @@
 import pandas as pd
+import numpy as np
 from sklearn.base import BaseEstimator, TransformerMixin
 import operator
+
+
+class RandomNoiseColumnsTransformer(BaseEstimator, TransformerMixin):
+    def __init__(self, random_seed=42):
+        self.random_seed = random_seed
+
+    def fit(self, X):
+        return self
+
+    def transform(self, X):
+        X_transformed = X.copy()
+        np.random.seed(self.random_seed)
+        X_transformed["random_noise"] = np.random.randn(len(X_transformed))
+        return X_transformed
 
 
 class LowerCaseColumnsTransformer(BaseEstimator, TransformerMixin):
@@ -199,11 +214,6 @@ class DropColumnsTransformer(BaseEstimator, TransformerMixin):
         self.columns = columns
 
     def fit(self, X):
-        # Check if the date column exists in the input data
-        if self.columns not in X.columns:
-            raise ValueError(
-                f"The specified date column '{self.columns}' does not exist in the DataFrame."
-            )
         return self
 
     def transform(self, X):
