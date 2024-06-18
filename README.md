@@ -100,8 +100,4 @@ Very early I faced the question of how to reliably pre-process and treat new dat
 
 # Hyperparameter tuning with Optuna
 
-This is less meta than all the other entries in this short article. Still, [Optuna]{https://optuna.org/} is worth sharing. It made my life easier. When tuning a model, my go to algorithm was scikit-learn's GridSearchCV. It worked well enough. --to be continued-----
-
 # API
-
-This take us back to the initial question? How can my model actually be used? 
