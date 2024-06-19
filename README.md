@@ -101,7 +101,13 @@ Very early I faced the question of how to reliably pre-process and treat new dat
 # Statistical Tests
 
 It didn't take long for me to realize that when analyzing data, comparing the mean for two different distributions can amount to simply saying that a number is higher than the other and nothing more. What we are usually interested in - and its important to make it explicit - is to find out if there are significant differences between the underlying distribution for two different results. There is a myriad of statistical tests and we should be careful about their assumptions. I also started explicitly stating the null hypothesis in my notebooks to ensure that the kind of conclusions that can be made from such a test are more constrained. A last, important lesson is that finding statistically significant differences does not tell us about the size of the difference! For that, we have to consider a series of effect size tests. You can find some code examples in my [analysis file](https://github.com/MatheusVazManzke/steam-analysis/blob/main/notebooks/analysis/1.2-mvm-data-analysis.ipynb)
+
 # Hyperparameter tuning with Optuna
+
+# Model Calibration
+
+# Conformal Prediction
+
 
 # Model interpretation
 
