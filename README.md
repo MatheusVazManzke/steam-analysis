@@ -9,8 +9,10 @@ UNDER CONSTRUCTION
 5. [Transformers and Pipelines](#Transformers-and-Pipelines)
 6. [Statistical Tests](#Statistical-Tests)
 7. [Hyperparameter tuning with Optuna](#Hyperparameter-tuning-with-Optuna)
-8. [Model Interpretation](#Model-Interpretation)
-9. [API](#API)
+8. [Model Calibration](#Model-Calibration)
+9. [Conformal Prediction](#Conformal-Prediction)
+10. [Model Interpretation](#Model-Interpretation)
+11. [API](#API)
 
 </small> Note: If you want to see the workflow and the code, go straight to [Scaffolding](#Scaffolding). Overall, there are some unnecessary complexities for a project of this scale. I still hope that it serves as an example of my baseline workflow.</small>
 
@@ -107,7 +109,6 @@ It didn't take long for me to realize that when analyzing data, comparing the me
 # Model Calibration
 
 # Conformal Prediction
-
 
 # Model interpretation
 
