@@ -112,8 +112,11 @@ Since Data Science deals fundamentallynwith experimentation, we need to keep tra
 
 # Model Calibration
 
+When we train a classification model, to minimize our usual loss functions it is enough to attribute the highest probability to the right classes, but we don't need to attribute the _right_ probability to them. Take a look at the calibration curve in the [model notebook](https://github.com/MatheusVazManzke/steam-analysis/blob/main/notebooks/modeling/2.2-mvm-classification-models.ipynb) to see by how much our model inflates probabilities. In practice, this means we can't reliably measure the uncertainty of our model; If we group all predictions with a 0.95% probability, for example, we might end up right only 50% of the time. 
+
 # Conformal Prediction
 
 # Model interpretation
+[General Pitfalls of Model-Agnostic Interpretation Methods for Machine Learning Models](https://arxiv.org/pdf/2007.04131) is a great reference for the interpretability of machine learning models. After reading it, I've adopted a simple routine for model interpretation: I use some sort of feature permutation importance to see what features are contributing the most to the model's _generalization_ and SHAP values to understand which features were most important for a specific trained model. This distinction is important: SHAP Values tell us how each feature altered a single prediction in relation to a baseline. Even if our model is really bad and/or overfitted, we will get SHAP values and they will be telling us nothing about real world relations! 
 
 # API
