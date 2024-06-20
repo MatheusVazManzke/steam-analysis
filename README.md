@@ -10,9 +10,10 @@ UNDER CONSTRUCTION
 6. [Statistical Tests](#Statistical-Tests)
 7. [Hyperparameter tuning with Optuna](#Hyperparameter-tuning-with-Optuna)
 8. [Model Calibration](#Model-Calibration)
-9. [Conformal Prediction](#Conformal-Prediction)
-10. [Model Interpretation](#Model-Interpretation)
-11. [API](#API)
+9. [MlFlow model tracking](#MlFlow-model-tracking)
+10. [Conformal Prediction](#Conformal-Prediction)
+11. [Model Interpretation](#Model-Interpretation)
+12. [API](#API)
 
 </small> Note: If you want to see the workflow and the code, go straight to [Scaffolding](#Scaffolding). Overall, there are some unnecessary complexities for a project of this scale. I still hope that it serves as an example of my baseline workflow.</small>
 
@@ -101,10 +102,13 @@ One of my favorite discoveries is [Pre-commit](https://pre-commit.com/). With Pr
 Very early I faced the question of how to reliably pre-process and treat new data. The dataset in this repository has data up to this year. If in one year from now I want to redo all the analysis and retrain the models, how can I be sure that everything will be processed as intended and as fast as possible? I built all the data processing into transformers classes that are then chained inside a pipeline. You can check the transformer classes I've coded [here](https://github.com/MatheusVazManzke/steam-analysis/blob/main/src/features/transformer_classes.py). I always try to make them as dynamic as possible, so that little refactoring will be needed if there are small changes to how the data is structured. With a few keystrokes, we can ensure that the whole transformation process will be replicated even if there are different column names or if we want to change the way we build our target variable. I'm not sure that this is the most elegant way to deal with such simple replication steps, but I also hope to show familiarity with OOP concepts.
 
 # Statistical Tests
-
 It didn't take long for me to realize that when analyzing data, comparing the mean for two different distributions can amount to simply saying that a number is higher than the other and nothing more. What we are usually interested in - and its important to make it explicit - is to find out if there are significant differences between the underlying distribution for two different results. There is a myriad of statistical tests and we should be careful about their assumptions. I also started explicitly stating the null hypothesis in my notebooks to ensure that the kind of conclusions that can be made from such a test are more constrained. A last, important lesson is that finding statistically significant differences does not tell us about the size of the difference! For that, we have to consider a series of effect size tests. You can find some code examples in my [analysis file](https://github.com/MatheusVazManzke/steam-analysis/blob/main/notebooks/analysis/1.2-mvm-data-analysis.ipynb)
 
 # Hyperparameter tuning with Optuna
+Optuna is a software framework for hyperparameter optimization. Optuna works by allowing us to define an objective function that then will be optimized through a process of Bayesian optimization. We have full control over the search space and what is being optimized for. In fact, Optuna doesn't have necessarily to do with machine learning hyperparemeter: It is more generally a [optimization framework](https://medium.com/@walter_sperat/using-optuna-the-wrong-way-e403f7c8e726). The objective function and the subsequent study in this repository can be found [here](https://github.com/MatheusVazManzke/steam-analysis/blob/main/notebooks/modeling/2.2-mvm-classification-models.ipynb).
+
+# MlFlow model tracking
+Since Data Science deals fundamentallynwith experimentation, we need to keep track of all the results in an organized fashion that can also be easily shared with our colleagues. I like doing this with MlFlow. It allow us to create Experiments and inside each experiment, to track multiple Runs, storing different metrics, parameters and artifacts. You will notice that I put MlFlow inside my Optuna objective function. This way, whenever I run a study, I'm able to keep all the results. MlFlow user interfarce then allow us to very easily compare results. 
 
 # Model Calibration
 
