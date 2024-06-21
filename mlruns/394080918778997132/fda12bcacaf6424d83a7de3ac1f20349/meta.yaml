@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/matheus/Projects/steam_analysis/steam-analysis/mlruns/394080918778997132/fda12bcacaf6424d83a7de3ac1f20349/artifacts
+end_time: 1718923717687
+entry_point_name: ''
+experiment_id: '394080918778997132'
+lifecycle_stage: active
+run_id: fda12bcacaf6424d83a7de3ac1f20349
+run_name: trial_90
+run_uuid: fda12bcacaf6424d83a7de3ac1f20349
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1718923717665
+status: 3
+tags: []
+user_id: matheus

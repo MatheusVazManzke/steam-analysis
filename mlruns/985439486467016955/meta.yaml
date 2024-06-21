@@ -1,0 +1,6 @@
+artifact_location: file:///Users/matheus/Projects/steam_analysis/steam-analysis/mlruns/985439486467016955
+creation_time: 1718912360017
+experiment_id: '985439486467016955'
+last_update_time: 1718912360017
+lifecycle_stage: active
+name: steam-classification-model

@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/matheus/Projects/steam_analysis/steam-analysis/mlruns/985439486467016955/c4e03ccb8af3405398a43c11e88ddc76/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '985439486467016955'
+lifecycle_stage: active
+run_id: c4e03ccb8af3405398a43c11e88ddc76
+run_name: crawling-squid-750
+run_uuid: c4e03ccb8af3405398a43c11e88ddc76
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1718913110973
+status: 1
+tags: []
+user_id: unknown

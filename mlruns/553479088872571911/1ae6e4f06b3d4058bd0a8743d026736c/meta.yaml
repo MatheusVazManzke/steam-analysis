@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/matheus/Projects/steam_analysis/steam-analysis/mlruns/553479088872571911/1ae6e4f06b3d4058bd0a8743d026736c/artifacts
+end_time: 1718914476002
+entry_point_name: ''
+experiment_id: '553479088872571911'
+lifecycle_stage: active
+run_id: 1ae6e4f06b3d4058bd0a8743d026736c
+run_name: trial_93
+run_uuid: 1ae6e4f06b3d4058bd0a8743d026736c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1718914475984
+status: 3
+tags: []
+user_id: matheus

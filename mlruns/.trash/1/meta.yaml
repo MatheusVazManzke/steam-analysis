@@ -1,0 +1,7 @@
+artifact_location: file:///Users/matheus/Projects/steam_analysis/steam-analysis/mlruns/1
+creation_time: null
+experiment_id: '1'
+last_update_time: 1718912284954
+lifecycle_stage: deleted
+name: MLflow Quickstart
+tags: {}
