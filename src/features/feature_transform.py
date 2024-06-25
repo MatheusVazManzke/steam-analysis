@@ -9,7 +9,6 @@ from transformer_classes import (
     DropColumnsTransformer,
     DataframeFilterTransformer,
     CreateTargetColumns,
-    RandomNoiseColumnsTransformer,
 )
 
 from sklearn.pipeline import Pipeline
@@ -18,12 +17,7 @@ import sys
 from utils import load_data, save_data
 
 
-def list_columns_to_keep(data, columns_to_exclude):
-    """List columns to keep by excluding specified columns."""
-    return [col for col in data.columns if col not in columns_to_exclude]
-
-
-def create_transformation_pipeline(columns_to_exclude):
+def create_transformation_pipeline():
     """Create the transformation pipeline with the specified steps."""
     return Pipeline(
         steps=[
@@ -42,7 +36,13 @@ def create_transformation_pipeline(columns_to_exclude):
             (
                 "create_counter_columns",
                 CounterColumnsTransformer(
-                    ["tags", "screenshots", "movies", "supported_languages"]
+                    [
+                        "tags",
+                        "screenshots",
+                        "movies",
+                        "supported_languages",
+                        "about_the_game",
+                    ]
                 ),
             ),
             ("create_date_columns", DateColumnsTransformer("release_date")),
@@ -59,19 +59,6 @@ def create_transformation_pipeline(columns_to_exclude):
                 ),
             ),
             ("create_target_columns", CreateTargetColumns(threshold=500)),
-            (
-                "filter_dataframe",
-                DataframeFilterTransformer(
-                    filter_dict={
-                        "metacritic_score": 0,
-                        "total_reviews": 0,
-                        "year": 2020,
-                        "genres": "Indie",
-                    }
-                ),
-            ),
-            ("create_random_noise_columns", RandomNoiseColumnsTransformer()),
-            ("drop_columns", DropColumnsTransformer(columns_to_exclude)),
         ]
     )
 
@@ -95,26 +82,7 @@ def main(raw_data_file):
 
     data = load_data(data_file_path)
 
-    # Define columns to keep (exclude)
-    columns_to_exclude = list_columns_to_exclude(
-        data,
-        [
-            "Achievements",
-            "about_length",
-            "n_screens",
-            "n_movies",
-            "n_tags",
-            "n_languages",
-            "has_publisher",
-            "has_support_email",
-            "has_support_url",
-            "has_website",
-            "random_noise",
-        ],
-    )
-
-    # Create transformation pipeline
-    transformation_pipeline = create_transformation_pipeline(columns_to_exclude)
+    transformation_pipeline = create_transformation_pipeline()
 
     # Transform data
     transformed_data = transformation_pipeline.fit_transform(data)

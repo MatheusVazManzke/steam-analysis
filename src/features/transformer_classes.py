@@ -214,13 +214,14 @@ class DropColumnsTransformer(BaseEstimator, TransformerMixin):
         self.columns = columns
 
     def fit(self, X):
+        self.columns_to_exlude = list(X[X.columns.difference(self.columns)].columns)
+        self.columns_to_exlude = [col.lower().replace(" ", "_") for col in self.columns]
         return self
 
     def transform(self, X):
         X_transformed = X.copy()
 
-        # Count the number of unique items in each specified column
-        X_transformed = X_transformed.drop(columns=self.columns)
+        X_transformed = X_transformed.drop(columns=self.columns_to_exlude)
 
         return X_transformed
 
