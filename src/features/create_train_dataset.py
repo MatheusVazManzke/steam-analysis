@@ -9,39 +9,24 @@ import sys
 from utils import load_data, save_data
 
 
-def create_transformation_pipeline():
-    return Pipeline(
-        [
-            (
-                "filter_dataframe",
-                DataframeFilterTransformer(
-                    filter_dict={
-                        "metacritic_score": 0,
-                        "total_reviews": 0,
-                        "year": 2020,
-                        "genres": "Indie",
-                    }
-                ),
-            ),
-            (
-                "drop_columns",
-                DropColumnsTransformer(
-                    [
-                        "Achievements",
-                        "n_about_the_game",
-                        "n_screenshots",
-                        "n_movies",
-                        "n_tags",
-                        "n_supported_languages",
-                        "has_publishers",
-                        "has_support_email",
-                        "has_support_url",
-                        "has_website",
-                    ]
-                ),
-            ),
-        ]
-    )
+columns_to_keep = [
+    "n_supported_languages",
+    "n_tags",
+    "achievements",
+    "n_about_the_game",
+    "n_screenshots",
+    "has_support_url",
+    "target_success",
+]
+
+dataframe_filter = DataframeFilterTransformer(
+    filter_dict={
+        "metacritic_score": 0,
+        "total_reviews": 0,
+        "year": 2020,
+        "genres": "Indie",
+    }
+)
 
 
 def main(raw_data_file):
@@ -57,14 +42,13 @@ def main(raw_data_file):
 
     data = load_data(data_file_path)
 
-    train_dataset_pipeline = create_transformation_pipeline()
-
     # Transform data
-    transformed_data = train_dataset_pipeline.fit_transform(data)
+    filtered_data = dataframe_filter.fit_transform(data)
+    filtered_data = filtered_data[columns_to_keep]
 
     # Save transformed data
     save_data(
-        transformed_data,
+        filtered_data,
         os.path.abspath(os.path.join(base_dir, "data/processed/train_dataset.csv")),
     )
 

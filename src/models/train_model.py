@@ -5,6 +5,17 @@ import pandas as pd
 from lightgbm import LGBMClassifier
 from sklearn.calibration import CalibratedClassifierCV
 
+# Best parameters for a lightgbm model. Based on 2.2-mvm-classification-models.ipynb.
+params = {
+    "num_leaves": 218,
+    "learning_rate": 0.012299865257179486,
+    "feature_fraction": 0.7205287309983145,
+    "reg_alpha": 5.534157704462869e-06,
+    "reg_lambda": 0.008453734323058607,
+    "bagging_fraction": 0.7417796313309262,
+    "min_child_samples": 50,
+}
+
 
 # Function to load data
 def load_data(file_path):
@@ -18,27 +29,14 @@ def main():
         os.path.join(script_dir, "../../")
     )  # Project root directory
     data_file_path = os.path.join(
-        base_dir, "data/processed/transformed_games.csv"
+        base_dir, "data/processed/train_dataset.csv"
     )  # Path to your processed data
 
     # Load processed data
     processed_data = load_data(data_file_path)
 
-    # Parameters for LightGBM
-    params = {
-        "num_leaves": 218,
-        "learning_rate": 0.012299865257179486,
-        "feature_fraction": 0.7205287309983145,
-        "reg_alpha": 5.534157704462869e-06,
-        "reg_lambda": 0.008453734323058607,
-        "bagging_fraction": 0.7417796313309262,
-        "min_child_samples": 50,
-        "is_unbalance": True,
-        "random_state": 42,
-    }
-
     # Prepare training data and target
-    train_data = processed_data.drop(columns=["target_success", "total_reviews"])
+    train_data = processed_data.drop(columns=["target_success"])
     train_target = processed_data["target_success"]
 
     # Initialize LightGBM classifier

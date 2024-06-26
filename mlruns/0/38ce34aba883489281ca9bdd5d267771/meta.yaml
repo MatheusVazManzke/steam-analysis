@@ -1,0 +1,15 @@
+artifact_uri: ./mlruns/0/38ce34aba883489281ca9bdd5d267771/artifacts
+end_time: 1719409556811
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 38ce34aba883489281ca9bdd5d267771
+run_name: trial_121
+run_uuid: 38ce34aba883489281ca9bdd5d267771
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1719409556796
+status: 3
+tags: []
+user_id: matheus

@@ -18,6 +18,22 @@ class RandomNoiseColumnsTransformer(BaseEstimator, TransformerMixin):
         return X_transformed
 
 
+class StringLengthTransformer(BaseEstimator, TransformerMixin):
+    def __init__(self, column):
+        self.column = column
+        pass
+
+    def fit(self, X):
+        return self
+
+    def transform(self, X):
+        X_transformed = X.copy()
+        X_transformed[f"n_{self.column}"] = X_transformed[self.column].apply(
+            lambda x: len(x)
+        )
+        return X_transformed
+
+
 class LowerCaseColumnsTransformer(BaseEstimator, TransformerMixin):
     def __init__(self):
         pass
