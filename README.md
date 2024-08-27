@@ -1,5 +1,4 @@
-UNDER CONSTRUCTION
-
+I'm currently rewritting this so that it better reflects my current technical skills.
 ## Table of Contents
 
 1. [Introduction](#Introduction)
@@ -15,21 +14,13 @@ UNDER CONSTRUCTION
 11. [Model Interpretation](#Model-Interpretation)
 12. [API](#API)
 
-</small> Note: If you want to see the workflow and the code, go straight to [Scaffolding](#Scaffolding). Overall, there are some unnecessary complexities for a project of this scale. I still hope that it serves as an example of my baseline workflow.</small>
+</small> Note: Overall, there are some unnecessary complexities for a project of this scale. I still hope that it serves as an example of my baseline workflow.</small>
 
 ==============================
 
 # Introduction
 
-My main goal here is documenting my workflow, so that I can have an easy source of reference. I do hope, though, that it may be useful to the occasional lost wanderer that may end up here. For in data science, we are all eternal learners.
-
-"How can I actually use this 'model' of yours?" - asked a friend of mine. I had no idea. The mathematical core of Machine Learning is a thing of beauty and one can easily become enraptured by its promises. I thought I was some sort of meta-oracle, writting in arcane language and teaching machines how to tread the unknown. But 'If a tree falls in a forest and no one is around to hear it, does it make a sound?'; If my models exist only in the comforting cells of my notebooks, are they learning anything at all? Are they able to withstand reality? Or, like phosporus when exposed to the atmosphere, will they dissolve spectacularly? That question I was asked cast me out of the dreamy space of beautiful abstractions and heeded me to the answer. 
-
-I decided to start by hunting the real datasets and the real demands myself. knocked on the doors of local businesses and offered my skills. It was not long before I got some data to work with. It was hell. A pile of directories and files, duplicated names and a towering monolith of an environment. Soon I reached a cognitive bottleneck. I could not keep track of things, I had to redo work; either because I could not easily understand what I had done earlier or because I had outright lost the files. This Babel was not touching heaven. It was built to fall.
-
-I decided to make an intertemporal pact with myself. I assured my future self that I would adhere to a principled structure. I paid future ease of information handling with present learning curve. I had a clear goal in sight: I wanted all my projects to be easy to navigate, easy to read, and easy to reproduce. 
-
-In the end, the process of learning was fun and I hope to share some gems here so that the next person can have an even shorter learning curve. 
+My main goal here is to document my workflow, providing an easy reference for best practices and reusable code. I also hope it may be useful to the occasional lost wanderer who stumbles upon it.
 
 # Scaffolding 
 
