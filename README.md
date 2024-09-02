@@ -10,17 +10,15 @@ I'm currently rewritting this so that it better reflects my current technical sk
 7. [Hyperparameter tuning with Optuna](#Hyperparameter-tuning-with-Optuna)
 8. [Model Calibration](#Model-Calibration)
 9. [MlFlow model tracking](#MlFlow-model-tracking)
-10. [Conformal Prediction](#Conformal-Prediction)
-11. [Model Interpretation](#Model-Interpretation)
-12. [API](#API)
-
+10. [Model Interpretation](#Model-Interpretation)
+    
 </small> Note: Overall, there are some unnecessary complexities for a project of this scale. I still hope that it serves as an example of my baseline workflow.</small>
 
 ==============================
 
 # Introduction
 
-My main goal here is to document my workflow, providing an easy reference for best practices and reusable code. I also hope it may be useful to the occasional lost wanderer who stumbles upon it.
+This repository is based on a project I did for a gaming company. The goal is trying to find patterns in the way successful games are presented on the gaming store 'Steam', using both classical data analysis tools and also LLM methods. My main goal here is documenting my workflow, providing an easy reference for best practices and reusable code. I also hope it may be useful to the occasional lost wanderer who stumbles upon it.
 
 # Scaffolding 
 
@@ -105,9 +103,5 @@ Since Data Science deals fundamentallynwith experimentation, we need to keep tra
 
 When we train a classification model, to minimize our usual loss functions it is enough to attribute the highest probability to the right classes, but we don't need to attribute the _right_ probability to them. Take a look at the calibration curve in the [model notebook](https://github.com/MatheusVazManzke/steam-analysis/blob/main/notebooks/modeling/2.2-mvm-classification-models.ipynb) to see by how much our model inflates probabilities. In practice, this means we can't reliably measure the uncertainty of our model; If we group all predictions with a 0.95% probability, for example, we might end up right only 50% of the time. 
 
-# Conformal Prediction
-
 # Model interpretation
 [General Pitfalls of Model-Agnostic Interpretation Methods for Machine Learning Models](https://arxiv.org/pdf/2007.04131) is a great reference for the interpretability of machine learning models. After reading it, I've adopted a simple routine for model interpretation: I use some sort of feature permutation importance to see what features are contributing the most to the model's _generalization_ and SHAP values to understand which features were most important for a specific trained model. This distinction is important: SHAP Values tell us how each feature altered a single prediction in relation to a baseline. Even if our model is really bad and/or overfitted, we will get SHAP values and they will be telling us nothing about real world relations! 
-
-# API
